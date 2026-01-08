@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#070708">
+  <!-- Modern UI font used by the theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <title>Lantern Studios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Lantern <span>Studios</span></div>
+
+  <!-- Accessible hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navigation menu -->
+  <nav id="nav-menu" aria-label="Main navigation">
+    <a class="active" aria-current="page" href="index.html">Home</a>
+    <a href="jewelry.html">Jewelry</a>
+    <a href="cosmetics.html">Cosmetics</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero fade-up">
+    <h1>Capturing Moments,<br><span>Creating Memories</span></h1>
+    <p>Professional photography and videography services</p>
+    <a href="#contact" class="btn">BOOK YOUR SESSION</a>
+  </section>
+
+  <section class="work">
+    <h2>Our Work</h2>
+    <div class="grid">
+      <div class="card"><img src="https://picsum.photos/400/500?1" alt="Wedding photo 1"><span>WEDDING</span></div>
+      <div class="card"><img src="https://picsum.photos/400/500?2" alt="Wedding photo 2"><span>WEDDING</span></div>
+      <div class="card"><img src="https://picsum.photos/400/500?3" alt="Portrait session photo"><span>PORTRAIT</span></div>
+    </div>
+  </section>
+
+  <section class="branches">
+    <h2>Our Branches</h2>
+    <div class="grid">
+      <div class="box">
+        <img src="https://picsum.photos/500/350?4" alt="Lantern Jewelry showcased">
+        <h3>Lantern Jewelry</h3>
+        <a href="jewelry.html">EXPLORE COLLECTION</a>
+      </div>
+      <div class="box">
+        <img src="https://picsum.photos/500/350?5" alt="Lantern Cosmetics showcased">
+        <h3>Lantern Cosmetics</h3>
+        <a href="cosmetics.html">DISCOVER PRODUCTS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New: Contact / Booking form -->
+  <section id="contact" class="form-section fade-up">
+    <h2>Contact & Book a Session</h2>
+    <p class="form-intro">Tell us about your session and preferred dates. We'll reply within 24 hours.</p>
+
+    <form>
+      <div class="row">
+        <input id="name" name="name" type="text" placeholder="Full name" required>
+        <input id="email" name="email" type="email" placeholder="Email address" required>
+      </div>
+
+      <div class="row">
+        <input id="phone" name="phone" type="tel" placeholder="Phone (optional)">
+        <input id="date" name="date" type="date" placeholder="Preferred date (optional)">
+      </div>
+
+      <textarea id="message" name="message" placeholder="Tell us about your session..." required></textarea>
+
+      <p class="form-status" aria-live="polite"></p>
+      <button type="submit" class="btn">SEND MESSAGE</button>
+    </form>
+  </section>
+</main>
+
+<footer>© 2025 Lantern Studios</footer>
+<script src="script.js"></script>
+</body>
+</html>

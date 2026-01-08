@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <title>Lantern Cosmetics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Lantern <span>Studios</span></div>
+
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav id="nav-menu" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="jewelry.html">Jewelry</a>
+    <a class="active" aria-current="page" href="cosmetics.html">Cosmetics</a>
+  </nav>
+</header>
+
+
+<section class="page-hero">
+  <h1>Lantern <span>Cosmetics</span></h1>
+  <p>Premium beauty products that bring out your radiance</p>
+</section>
+
+<section class="products fade-up">
+  <h2>Our Products</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://picsum.photos/400/400?9" alt="Radiance Luxury Serum">
+      <small>SERUM</small>
+      <h4>Radiance Luxury Serum</h4>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/400?10" alt="Velvet Touch Lotion">
+      <small>LOTION</small>
+      <h4>Velvet Touch Lotion</h4>
+    </div>
+  </div>
+</section>
+
+<section class="form-section fade-up">
+  <h2>Inquire About Our Products</h2>
+  <form>
+    <label class="sr-only" for="name">Name</label>
+    <input id="name" name="name" type="text" placeholder="Name" required>
+
+    <label class="sr-only" for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="Email" required>
+
+    <label class="sr-only" for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel" placeholder="Phone">
+
+    <label class="sr-only" for="interest">Product Interest</label>
+    <input id="interest" name="interest" type="text" placeholder="Product Interest">
+
+    <label class="sr-only" for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Message" required></textarea>
+
+    <p class="form-status" aria-live="polite"></p>
+    <button type="submit">SUBMIT INQUIRY</button>
+  </form>
+</section>
+
+<footer>© 2025 Lantern Studios</footer>
+<script src="script.js"></script>
+</body>
+</html>
