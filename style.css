@@ -298,6 +298,18 @@ a:focus, button:focus, input:focus, textarea:focus {
   .form-section .row { flex-direction: column; }
   .form-section input, .form-section textarea { padding: 12px; font-size: 0.98rem; }
   .form-section button { width: 100%; justify-self: stretch; padding: 12px 16px; }
+
+  /* Make 'Our Work' a 2x3 grid on mobile */
+  .work .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    justify-items: center;
+  }
+  .work .card {
+    width: 100%;
+    max-width: 420px;
+  }
 }
 
 /* Fade-up animation */
