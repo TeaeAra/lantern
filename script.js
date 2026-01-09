@@ -70,6 +70,23 @@ if (hamburger && navMenu) {
       link.removeAttribute('aria-current');
     }
   });
+
+  // Hide .html extensions in the visible URL (client-side only)
+  (function cleanUrl() {
+    try {
+      const path = window.location.pathname;
+      let newPath = path;
+      if (path.endsWith('index.html')) newPath = '/';
+      else if (path.endsWith('.html')) newPath = path.replace(/\.html$/, '');
+      const qs = window.location.search || '';
+      const hash = window.location.hash || '';
+      const currentFull = window.location.pathname + window.location.search + window.location.hash;
+      const candidate = newPath + qs + hash;
+      if (candidate !== currentFull) {
+        history.replaceState(null, '', candidate);
+      }
+    } catch (e) { /* ignore */ }
+  })();
 }
 
 // Fade-in sections on scroll
