@@ -71,7 +71,7 @@ if (hamburger && navMenu) {
     }
   });
 
-  // Hide .html extensions in the visible URL (client-side only)
+  // Hide .html extensions in the visible URL (client-side only) — verify the candidate path exists first
   (function cleanUrl() {
     try {
       const path = window.location.pathname;
@@ -80,11 +80,25 @@ if (hamburger && navMenu) {
       else if (path.endsWith('.html')) newPath = path.replace(/\.html$/, '');
       const qs = window.location.search || '';
       const hash = window.location.hash || '';
+      const candidatePath = newPath + qs;
+      const candidateFull = newPath + qs + hash;
       const currentFull = window.location.pathname + window.location.search + window.location.hash;
-      const candidate = newPath + qs + hash;
-      if (candidate !== currentFull) {
-        history.replaceState(null, '', candidate);
-      }
+      if (candidateFull === currentFull) return;
+
+      // Only replace the URL if the server actually serves the candidate (avoids 404s on hosts without rewrites)
+      fetch(candidatePath, { method: 'HEAD', cache: 'no-store' })
+        .then(resp => {
+          if (resp && resp.ok) {
+            history.replaceState(null, '', candidateFull);
+          } else if (resp && resp.status === 405) {
+            // HEAD not allowed on some hosts — try GET as a fallback
+            return fetch(candidatePath, { method: 'GET', cache: 'no-store' })
+              .then(r2 => { if (r2 && r2.ok) history.replaceState(null, '', candidateFull); })
+              .catch(() => {});
+          }
+        })
+        .catch(() => { /* ignore network errors */ });
+
     } catch (e) { /* ignore */ }
   })();
 }
