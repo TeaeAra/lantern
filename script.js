@@ -70,3 +70,32 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 fades.forEach(el => observer.observe(el));
+
+// Branch link press feedback + keyboard space behavior (accessibility)
+document.querySelectorAll('.box a').forEach(link => {
+  // Ensure pointer cursor for clarity
+  link.style.cursor = 'pointer';
+
+  // Visual pressed state for mouse/touch
+  link.addEventListener('mousedown', () => link.classList.add('pressed'));
+  link.addEventListener('mouseup', () => link.classList.remove('pressed'));
+  link.addEventListener('mouseleave', () => link.classList.remove('pressed'));
+  link.addEventListener('touchstart', () => link.classList.add('pressed'), { passive: true });
+  link.addEventListener('touchend', () => link.classList.remove('pressed'));
+
+  // Support spacebar to activate link (anchors respond to Enter by default)
+  link.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Spacebar') {
+      e.preventDefault();
+      link.classList.add('pressed');
+      const onKeyUp = (ev) => {
+        if (ev.key === ' ' || ev.key === 'Spacebar') {
+          link.classList.remove('pressed');
+          link.click();
+          window.removeEventListener('keyup', onKeyUp);
+        }
+      };
+      window.addEventListener('keyup', onKeyUp);
+    }
+  });
+});
