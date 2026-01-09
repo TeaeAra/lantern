@@ -425,8 +425,8 @@ a:focus, button:focus, input:focus, textarea:focus {
   .gallery-filters button { padding: 8px 12px; min-width: 84px; scroll-snap-align: center; }
   .gallery-grid { gap: 12px; grid-template-columns: repeat(2, 1fr); }
 
-  /* On mobile, remove hidden cards from layout so matched items appear at the top */
-  .gallery-card.hide { display: none; opacity: 0; transform: none; pointer-events: none; }
+  /* Keep hidden cards visually hidden but maintain layout for accessibility */
+  .gallery-card.hide { opacity: 0; transform: scale(0.98); pointer-events: none; }
 } 
 
 /* ---------- LIGHTBOX / MODAL ---------- */
