@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Lantern Studios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="preload-active">
+
+  <!-- Preloader: artistic lantern with flame -->
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-hidden="false">
+    <div class="preloader-inner">
+      <svg class="lantern-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <g fill="none" fill-rule="evenodd">
+          <rect x="14" y="14" width="36" height="36" rx="6" fill="url(#g)" opacity="0.06"></rect>
+          <g transform="translate(18,14)">
+            <circle cx="14" cy="14" r="14" fill="rgba(212,175,55,0.06)"></circle>
+            <g class="lantern-flame" fill="url(#a)">
+              <path d="M14 4c-3 3-4 5-4 8 0 4 3 6 4 8 1-2 4-4 4-8 0-3-1-5-4-8z"></path>
+            </g>
+          </g>
+        </g>
+        <defs>
+          <linearGradient id="a" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffd97a"/>
+            <stop offset="100%" stop-color="#d4af37"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div class="preloader-title">Lantern Studios</div>
+      <div class="preloader-sub">Exploring the gallery…</div>
+    </div>
+  </div>
+
+<header class="navbar">
+  <div class="logo">Lantern <span>Studios</span></div>
+
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav id="nav-menu" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a class="active" aria-current="page" href="gallery.html">Gallery</a>
+    <a href="jewelry.html">Jewelry</a>
+    <a href="cosmetics.html">Cosmetics</a>
+  </nav>
+</header>
+
+<section class="hero fade-up">
+  <h1>Our <span>Gallery</span></h1>
+  <p>Explore our work by category</p>
+</section>
+
+<section class="gallery-filters" id="gallery-filters">
+  <div class="filters-buttons" role="group" aria-label="Gallery categories">
+    <button data-filter="all" aria-pressed="true" class="active">All</button>
+    <button data-filter="lifestyle" aria-pressed="false">Lifestyle</button>
+    <button data-filter="wedding" aria-pressed="false">Wedding</button>
+    <button data-filter="events" aria-pressed="false">Events</button>
+    <button data-filter="fineart" aria-pressed="false">Fine Art</button>
+    <button data-filter="corporate" aria-pressed="false">Corporate</button>
+    <button data-filter="products" aria-pressed="false">Products</button>
+  </div>
+
+  <label for="gallery-select" class="sr-only">Filter gallery</label>
+  <select id="gallery-select" class="gallery-select" aria-label="Filter gallery">
+    <option value="all">All</option>
+    <option value="lifestyle">Lifestyle</option>
+    <option value="wedding">Wedding</option>
+    <option value="events">Events</option>
+    <option value="fineart">Fine Art</option>
+    <option value="corporate">Corporate</option>
+    <option value="products">Products</option>
+  </select>
+</section>
+
+
+<section class="gallery-grid">
+  <figure class="gallery-card" data-category="lifestyle">
+    <img src="https://picsum.photos/400/400?11" class="gallery-item" alt="Lifestyle photo">
+    <figcaption class="caption">LIFESTYLE</figcaption>
+  </figure>
+  <figure class="gallery-card" data-category="lifestyle">
+    <img src="https://picsum.photos/400/400?12" class="gallery-item" alt="Lifestyle photo">
+    <figcaption class="caption">LIFESTYLE</figcaption>
+  </figure>
+
+  <figure class="gallery-card" data-category="wedding">
+    <img src="https://picsum.photos/400/400?13" class="gallery-item" alt="Wedding photo">
+    <figcaption class="caption">WEDDING</figcaption>
+  </figure>
+  <figure class="gallery-card" data-category="wedding">
+    <img src="https://picsum.photos/400/400?14" class="gallery-item" alt="Wedding photo">
+    <figcaption class="caption">WEDDING</figcaption>
+  </figure>
+
+  <figure class="gallery-card" data-category="events">
+    <img src="https://picsum.photos/400/400?15" class="gallery-item" alt="Events photo">
+    <figcaption class="caption">EVENTS</figcaption>
+  </figure>
+  <figure class="gallery-card" data-category="events">
+    <img src="https://picsum.photos/400/400?16" class="gallery-item" alt="Events photo">
+    <figcaption class="caption">EVENTS</figcaption>
+  </figure>
+
+  <figure class="gallery-card" data-category="fineart">
+    <img src="https://picsum.photos/400/400?17" class="gallery-item" alt="Fine art photo">
+    <figcaption class="caption">FINE ART</figcaption>
+  </figure>
+  <figure class="gallery-card" data-category="fineart">
+    <img src="https://picsum.photos/400/400?18" class="gallery-item" alt="Fine art photo">
+    <figcaption class="caption">FINE ART</figcaption>
+  </figure>
+
+  <figure class="gallery-card" data-category="corporate">
+    <img src="https://picsum.photos/400/400?19" class="gallery-item" alt="Corporate photo">
+    <figcaption class="caption">CORPORATE</figcaption>
+  </figure>
+  <figure class="gallery-card" data-category="corporate">
+    <img src="https://picsum.photos/400/400?20" class="gallery-item" alt="Corporate photo">
+    <figcaption class="caption">CORPORATE</figcaption>
+  </figure>
+
+  <figure class="gallery-card" data-category="products">
+    <img src="https://picsum.photos/400/400?21" class="gallery-item" alt="Product photo">
+    <figcaption class="caption">PRODUCTS</figcaption>
+  </figure>
+  <figure class="gallery-card" data-category="products">
+    <img src="https://picsum.photos/400/400?22" class="gallery-item" alt="Product photo">
+    <figcaption class="caption">PRODUCTS</figcaption>
+  </figure>
+
+    <figure class="gallery-card" data-category="corporate">
+    <img src="https://picsum.photos/400/400?19" class="gallery-item" alt="Corporate photo">
+    <figcaption class="caption">CORPORATE</figcaption>
+  </figure>
+  <figure class="gallery-card" data-category="corporate">
+    <img src="https://picsum.photos/400/400?20" class="gallery-item" alt="Corporate photo">
+    <figcaption class="caption">CORPORATE</figcaption>
+  </figure>
+
+  <figure class="gallery-card" data-category="products">
+    <img src="https://picsum.photos/400/400?21" class="gallery-item" alt="Product photo">
+    <figcaption class="caption">PRODUCTS</figcaption>
+  </figure>
+  <figure class="gallery-card" data-category="products">
+    <img src="https://picsum.photos/400/400?22" class="gallery-item" alt="Product photo">
+    <figcaption class="caption">PRODUCTS</figcaption>
+  </figure>
+</section>
+
+<!-- Lightbox modal for full-size viewing -->
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+  <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+  <button class="lightbox-prev" aria-label="Previous image" type="button">‹</button>
+
+  <div class="lightbox-content" role="document">
+    <img src="" alt="" class="lightbox-img">
+    <div class="lightbox-caption" aria-live="polite"></div>
+  </div>
+
+  <button class="lightbox-next" aria-label="Next image" type="button">›</button>
+</div>
+
+<footer>© 2025 Lantern Studios</footer>
+<script src="script.js"></script>
+</body>
+</html>

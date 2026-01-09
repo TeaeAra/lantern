@@ -9,7 +9,33 @@
   <title>Lantern Cosmetics</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="preload-active">
+
+  <!-- Preloader: artistic lantern with flame -->
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-hidden="false">
+    <div class="preloader-inner">
+      <svg class="lantern-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <g fill="none" fill-rule="evenodd">
+          <rect x="14" y="14" width="36" height="36" rx="6" fill="url(#g)" opacity="0.06"></rect>
+          <g transform="translate(18,14)">
+            <circle cx="14" cy="14" r="14" fill="rgba(212,175,55,0.06)"></circle>
+            <g class="lantern-flame" fill="url(#a)">
+              <path d="M14 4c-3 3-4 5-4 8 0 4 3 6 4 8 1-2 4-4 4-8 0-3-1-5-4-8z"></path>
+            </g>
+          </g>
+        </g>
+        <defs>
+          <linearGradient id="a" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffd97a"/>
+            <stop offset="100%" stop-color="#d4af37"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div class="preloader-title">Lantern Studios</div>
+      <div class="preloader-sub">Beauty in the making…</div>
+    </div>
+  </div>
 
 <header class="navbar">
   <div class="logo">Lantern <span>Studios</span></div>
