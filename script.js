@@ -147,28 +147,37 @@ document.querySelectorAll('.box a').forEach(link => {
 
 // Gallery filtering (cards with data-category) + mobile select
 const filterButtons = document.querySelectorAll(".gallery-filters button");
-const galleryCards = document.querySelectorAll(".gallery-card");
+let galleryCards = [];
 const filterSelect = document.getElementById('gallery-select');
 
 function applyFilter(filter) {
+  galleryCards = Array.from(document.querySelectorAll('.gallery-card'));
   // Update buttons
   filterButtons.forEach(b => {
     b.classList.toggle('active', b.dataset.filter === filter);
     b.setAttribute('aria-pressed', String(b.dataset.filter === filter));
   });
 
-  // Update select (if present)
+  // Update select
   if (filterSelect) filterSelect.value = filter;
 
-  // Show/hide cards
+  // Show / hide cards
   galleryCards.forEach(card => {
     const cat = card.dataset.category;
-    if (filter === 'all' || cat === filter) {
-      card.classList.remove('hide');
-    } else {
-      card.classList.add('hide');
-    }
+    card.classList.toggle(
+      'hide',
+      filter !== 'all' && cat !== filter
+    );
   });
+
+  // Reorder cards
+  const gallery = document.querySelector('.gallery');
+  if (!gallery) return;
+
+  const visible = [...galleryCards].filter(c => !c.classList.contains('hide'));
+  const hidden = [...galleryCards].filter(c => c.classList.contains('hide'));
+
+  [...visible, ...hidden].forEach(card => gallery.appendChild(card));
 
   // On small screens, collapse hidden items and scroll the first visible card into view
   if (window.innerWidth <= 480) {
